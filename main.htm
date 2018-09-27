@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/cart.css">
+  <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body onload="loader()">
+ <div id="loaderDiv"></div>
+ <div id="mainDiv" style="display:none">
+
+     <div class="lineDiv div1">
+        <div class="top-left top">
+           <a href="#" class="element">GET 40% OFF ON MOBILE</a>
+        </div>
+        <div class="top-right top" >
+           <a href="#" class="element">DOWNLOAD APP</a>
+           <a href="#" class="element">CONTACT US</a>
+           <a href="#" class="element">TRACK ORDER</a>
+           <a href="#" onclick="showPopUp()" style="width:auto;" class="element">SIGN IN
+             <div id="loginDiv" class="loginPopUp">
+               <form class="loginForm animate" action="#">
+                 <div class="imgcontainer">
+                   <span onclick="popUpClose()" class="close">&times;</span>
+                   <img src="image/logo.jpg" alt="No Photo" class="logo">
+                 </div>
+
+                 <div class="formContainer inputBox">
+                   <label><b>Username</b></label>
+                   <br>
+                   <input type="text" placeholder="Enter Username" name="username" required>
+                   <br>
+                   <label><b>Password</b></label>
+                   <br>
+                   <input type="password" placeholder="Enter Password" name="password" required>
+                   <br>
+                   <button type="submit">Login</button>
+                   <br>
+                   <input type="checkbox" checked="checked"> Remember me
+                 </div>
+
+                 <div class="formContainer" style="background-color:#f1f1f1">
+                   <button type="button" onclick="popUpClose()" class="cancelbtn">Cancel</button>
+                   <span class="forgot">Forgot password?</span>
+                 </div>
+               </form>
+             </div>
+           </a>
+           <a href="#" class="element"> SIGN UP</a>
+       </div>
+    </div>
+    <div class="lineDiv div2" id="t">
+       <div class="listLink" style="float:left">
+            <ul id="links">
+              <li class="logo"><img src="image/logo.jpg" style="width:210px;height:110px" /></li>
+              <li class="catagory"><a href="#">Foods</a></li>
+              <li class="catagory"><a href="#">Medicine</a></li>
+              <li class="search catagory"><input type="text" onkeyup="search()" id="searchBox" name="searchB" placeholder="       what r u looking for?        "></li>
+            </ul>
+       </div>
+       <div class="listLink" id="cart" style="float:right">
+         <img src="image/cart.png" style="height:80px;width:80px" />
+         <span id="cartDropDown" >Your cart is empty</span>
+       </div>
+     </div>
+    <div class="lineDiv">
+      <div class="slideBox">
+        <div class="slide-container">
+
+          <div class="slides fade">
+            <img src="image/c1.png" style="width:80%">
+          </div>
+
+          <div class="slides fade">
+            <img src="image/c2.jpg" style="width:80%">
+          </div>
+
+          <div class="slides fade">
+            <img src="image/c3.jpg" style="width:80%">
+          </div>
+
+          <a class="previous" onclick="nextSlide(-1)">❮</a>
+          <a class="next" onclick="nextSlide(1)">❯</a>
+        </div>
+        <br>
+
+        <div class="pointBox" style="">
+          <span class="point" onclick="presentSlide(1)"></span>
+          <span class="point" onclick="presentSlide(2)"></span>
+          <span class="point" onclick="presentSlide(3)"></span>
+        </div>
+      </div>
+    </div>
+    <div class="lineDiv">
+        <div class="product" onclick="addToCart(1)">
+          <span >+</span>
+          <img  src="image/1.jpg" alt="Picture Not available">
+          <div class="description">
+            <span class="pName"><b>BOOST Nutritional Pudding</b></span><br>
+            <span class="pName">Each 5 oz. BOOST® Nutritional Pudding cup provides 240 calories</span><br>
+            <span class="pPrice"><b>Price :</b>35RM</span>
+          </div>
+        </div>
+        <div class="product" onclick="addToCart(2)">
+          <span >+</span>
+          <img  src="image/2.jpg" alt="Picture Not available">
+          <div class="description">
+            <span class="pName"><b>UTI-Stat Proantinox Liquid</b></span><br>
+            <span class="pName">Helps support urinary tract health</span><br>
+            <span class="pPrice"><b>Price :</b>35RM</span>
+          </div>
+        </div>
+        <div class="product" onclick="addToCart(3)">
+          <span >+</span>
+          <img  src="image/3.jpg" alt="Picture Not available">
+          <div class="description">
+            <span class="pName"><b>Prosource Powder Protein</b></span><br>
+            <span class="pName">Flavorless powder adds protein to all types of food and beverages</span><br>
+            <span class="pPrice"><b>Price :</b>35RM</span>
+          </div>
+        </div>
+        <div class="product" onclick="addToCart(4)">
+          <span >+</span>
+          <img  src="image/4.jpg" alt="Picture Not available">
+          <div class="description">
+            <span class="pName"><b>Active Critical Care Liquid </b></span><br>
+            <span class="pName">Helps support urinary tract health</span><br>
+            <span class="pPrice"><b>Price :</b>35RM</span>
+          </div>
+        </div>
+        <div class="product" onclick="addToCart(5)">
+          <span >+</span>
+          <img  src="image/5.jpg" alt="Picture Not available">
+          <div class="description">
+            <span class="pName"><b>BOOST Nutritional Pudding</b></span><br>
+            <span class="pName">Each 5 oz. BOOST® Nutritional Pudding cup provides 240 calories</span><br>
+            <span class="pPrice"><b>Price :</b>35RM</span>
+          </div>
+        </div>
+        <div class="product" onclick="addToCart(6)">
+          <span >+</span>
+          <img  src="image/6.jpg" alt="Picture Not available">
+          <div class="description">
+            <span class="pName"><b>BOOST Nutritional Pudding</b></span><br>
+            <span class="pName">Each 5 oz. BOOST® Nutritional Pudding cup provides 240 calories</span><br>
+            <span class="pPrice"><b>Price :</b>35RM</span>
+          </div>
+        </div>
+        <div class="product" onclick="addToCart(7)">
+          <span >+</span>
+          <img  src="image/7.jpg" alt="Picture Not available">
+          <div class="description">
+            <span class="pName"><b>BOOST Nutritional Pudding</b></span><br>
+            <span class="pName">Each 5 oz. BOOST® Nutritional Pudding cup provides 240 calories</span><br>
+            <span class="pPrice"><b>Price :</b>35RM</span>
+          </div>
+        </div>
+        <div class="product" onclick="addToCart(8)">
+          <span >+</span>
+          <img  src="image/8.jpg" alt="Picture Not available">
+          <div class="description">
+            <span class="pName"><b>BOOST Nutritional Pudding</b></span><br>
+            <span class="pName">Each 5 oz. BOOST® Nutritional Pudding cup provides 240 calories</span><br>
+            <span class="pPrice"><b>Price :</b>35RM</span>
+          </div>
+        </div>
+        <div class="product" onclick="addToCart(9)">
+          <span >+</span>
+          <img  src="image/9.jpg" alt="Picture Not available">
+          <div class="description">
+            <span class="pName"><b>BOOST Nutritional Pudding</b></span><br>
+            <span class="pName">Each 5 oz. BOOST® Nutritional Pudding cup provides 240 calories</span><br>
+            <span class="pPrice"><b>Price :</b>35RM</span>
+          </div>
+        </div>
+        <div class="product" onclick="addToCart(10)">
+          <span >+</span>
+          <img  src="image/10.jpg" alt="Picture Not available">
+          <div class="description">
+            <span class="pName"><b>BOOST Nutritional Pudding</b></span><br>
+            <span class="pName">Each 5 oz. BOOST® Nutritional Pudding cup provides 240 calories</span><br>
+            <span class="pPrice"><b>Price :</b>35RM</span>
+          </div>
+        </div>
+        <div class="product" onclick="addToCart(11)">
+          <span >+</span>
+          <img  src="image/11.jpg" alt="Picture Not available">
+          <div class="description">
+            <span class="pName"><b>BOOST Nutritional Pudding</b></span><br>
+            <span class="pName">Each 5 oz. BOOST® Nutritional Pudding cup provides 240 calories</span><br>
+            <span class="pPrice"><b>Price :</b>35RM</span>
+          </div>
+        </div>
+        <div class="product" onclick="addToCart(12)">
+          <span >+</span>
+          <img  src="image/12.jpg" alt="Picture Not available">
+          <div class="description">
+            <span class="pName"><b>BOOST Nutritional Pudding</b></span><br>
+            <span class="pName">Each 5 oz. BOOST® Nutritional Pudding cup provides 240 calories</span><br>
+            <span class="pPrice"><b>Price :</b>35RM</span>
+          </div>
+        </div>
+        <div class="product" onclick="addToCart(13)">
+          <span >+</span>
+          <img  src="image/13.jpg" alt="Picture Not available">
+          <div class="description">
+            <span class="pName"><b>BOOST Nutritional Pudding</b></span><br>
+            <span class="pName">Each 5 oz. BOOST® Nutritional Pudding cup provides 240 calories</span><br>
+            <span class="pPrice"><b>Price :</b>35RM</span>
+          </div>
+        </div>
+      </div>
+ </div>
+ <script>
+    var popup = document.getElementById("loginDiv");
+    window.onclick = function(event) {
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    }
+ </script>
+</body>
+</html>

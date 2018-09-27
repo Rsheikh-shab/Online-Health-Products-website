@@ -1,0 +1,61 @@
+#cart{
+  position: relative;
+  display: inline-block;
+  margin-top: 25px;
+  font-size: 25px;
+}
+#cartDropDown{
+  position: absolute;
+  visibility: hidden;
+  width: 450px;
+  min-height: 100px;
+  height: auto;
+  background-color: 	 #ccf2ff;
+  z-index: 1;
+  right: 0px;
+  border-radius: 5px;
+  top:115%;
+  opacity: 0;
+  transition: opacity 1s;
+  text-align: center;
+  padding: 30px;
+}
+#cartDropDown::after{
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 10%;
+  margin-left: -5px;
+  border: 8px;
+  border-style: solid;
+  border-color: transparent transparent #555 transparent;
+}
+#cart:hover #cartDropDown{
+  visibility: visible;
+  opacity: 1;
+}
+.product > span{
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  left: 40%;
+  top: 25%;
+  height: 70%;
+  width: 100%;
+  font-size: 80px;
+  font-weight: bolder;
+}
+.lineDiv .product:hover img{
+  opacity: .8;
+}
+.lineDiv .product:hover  > span{
+  visibility: visible;
+  color: green;
+  opacity: 1;
+}
+
+.description{
+  padding: 20px;
+  background-color: pink;
+}
